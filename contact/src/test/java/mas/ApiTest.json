@@ -1,0 +1,51 @@
+{
+  "testQueryEmail_P" : {
+    "input": "slaff@hotmail.com",
+    "expected": "{ Item: {nam=slafadfff, email=slaff@hotmail.com, info={address=fafaf Tower Piplod road Parle Point, Surat, Gujarat 395007, contactNo=9099324780}} }"},
+  "testQueryEmail_N" :
+  {
+    "input": "sf@hotmail.com"
+
+  },
+
+  "testQueryName_P" :
+  {
+    "input": "slaff",
+    "expected": [{"nam":"slaff","email":"slaff@hotmail.com","info":{"address":"U 14 Anmol Tower Piplod road Parle Point, Surat, Gujarat 395007","contactNo":"9099324920"}}]
+
+  },
+
+  "testQueryName_N" :
+  {
+    "input": "slf"
+
+  },
+  "testEditItem_P" :
+  {
+    "input" :
+    {
+      "email": "slaff@hotmail.com",
+      "nam": "slafadfff",
+      "contactNo": "9099324780",
+      "address": "fafaf Tower Piplod road Parle Point, Surat, Gujarat 395007"
+    },
+    "expected": "{ Item: {nam=slafadfff, email=slaff@hotmail.com, info={address=fafaf Tower Piplod road Parle Point, Surat, Gujarat 395007, contactNo=9099324780}} }"
+  },
+
+  "testCreate_P" :
+  {
+    "input" :
+    {
+      "email": "zeelf@hotmail.com",
+      "nam": "zeel",
+      "contactNo": "9099324780",
+      "address": "R4-709 Tower Piplod road Parle Point, Surat, Gujarat 395007"
+    },
+    "expected": "{ Item: {nam=zeel, email=zeelf@hotmail.com, info={address=R4-709 Tower Piplod road Parle Point, Surat, Gujarat 395007, contactNo=9099324780}} }"
+  },
+  "testDel_P" :
+  {
+    "input": "wenzlaff@live.com"
+
+  }
+}
