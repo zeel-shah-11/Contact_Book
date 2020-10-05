@@ -18,4 +18,14 @@ prerequisite
     Default region name [None]: "us-west-2"
     Default output format [None]:Enter  
 
+•	Port :8000
+
+•	Region:us-west-2
+
+IDE Setup
+
+VM arguments : -Durl="E:/Plivo/contact/src/main/java/resource/data.json"
+
+Set base on you data.json path
+
 
