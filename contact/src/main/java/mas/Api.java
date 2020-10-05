@@ -20,7 +20,10 @@ import static mas.Constants.*;
 
 public class Api implements ApiI{
 
-
+    /**
+     Create table in DynemoDB
+     @param  dynamoDB  the DynamoDB
+     */
     public void  createTable(DynamoDB dynamoDB)
     {
         List<AttributeDefinition> attributeDefinitions= new ArrayList<AttributeDefinition>();
@@ -65,6 +68,10 @@ public class Api implements ApiI{
         }
     }
 
+    /**
+     load data in DynemoDB
+     @param  dynamoDB  the DynamoDB
+     */
     private void  loadJson(DynamoDB dynamoDB) throws IOException {
         Table table = dynamoDB.getTable(TABLE);
 
@@ -94,6 +101,13 @@ public class Api implements ApiI{
         parser.close();
     }
 
+    /**
+     Query Base on email id
+     @param email emailid of required item
+     @param  dynamoDB  the DynamoDB
+     @return item base on query parameter
+     */
+
     public Item queryEmail(String email,DynamoDB dynamoDB)
     {
         Table table = dynamoDB.getTable(TABLE);
@@ -110,6 +124,12 @@ public class Api implements ApiI{
         }
     }
 
+    /**
+     Query Base on name
+     @param name the name of required item
+     @param  dynamoDB  the DynamoDB
+     @return List base on query parameter
+     */
     public List<String> queryName(String name,DynamoDB dynamoDB) {
         Table table = dynamoDB.getTable(TABLE);
 
@@ -123,7 +143,16 @@ public class Api implements ApiI{
         }
         return outCome;
     }
-       public void editItem(String email,DynamoDB dynamoDB,String name,String contact,String address)
+
+    /**
+     Edit item base on parameter
+     @param email the emailid
+     @param  dynamoDB  the DynamoDB
+     @param name the name
+     @param contact the contact number
+     @param address the address
+     */
+    public void editItem(String email,DynamoDB dynamoDB,String name,String contact,String address)
         {
             Table table = dynamoDB.getTable(TABLE);
             GetItemSpec spec = new GetItemSpec().withPrimaryKey(EMAILID, email);
@@ -144,6 +173,14 @@ public class Api implements ApiI{
 
         }
 
+    /**
+     add item base on parameter
+     @param email the emailid
+     @param  dynamoDB  the DynamoDB
+     @param name the name
+     @param contact the contact number
+     @param address the address
+     */
         public void create(String email,DynamoDB dynamoDB,String name,String contact,String address)
         {
 
@@ -165,8 +202,12 @@ public class Api implements ApiI{
 
         }
 
-
-        public void del(String email,DynamoDB dynamoDB)
+    /**
+     delete item base on email
+     @param email the emailid
+     @param  dynamoDB  the DynamoDB
+     */
+    public void del(String email,DynamoDB dynamoDB)
         {
             Table table = dynamoDB.getTable(TABLE);
             DeleteItemSpec deleteItemSpec = new DeleteItemSpec()
